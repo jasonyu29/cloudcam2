@@ -7,9 +7,9 @@
     <title>cloudcam</title>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- Cloudinary upload widget - load early so it's ready before React; avoids races with other components -->
-    <script src="https://upload-widget.cloudinary.com/global/all.js" async></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <video id="webcam-source" autoplay playsinline style="display: none"></video>
+    <canvas id="output-canvas" width="1280" height="720" style="position: fixed; inset: 0; width: 100vw; height: 100vh"></canvas>
+    <div id="ui-root"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
