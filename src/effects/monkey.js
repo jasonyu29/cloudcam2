@@ -41,6 +41,8 @@ function init(_canvas, analyser) {
   });
   threeRenderer.setSize(1280, 720, false);
   threeRenderer.setPixelRatio(1);
+  threeRenderer.setClearColor(0x000000, 0);
+  threeRenderer.outputColorSpace = THREE.SRGBColorSpace;
 
   scene = new THREE.Scene();
 
@@ -87,6 +89,10 @@ function init(_canvas, analyser) {
       });
 
       scene.add(suzanne);
+    },
+    undefined,
+    (err) => {
+      console.error("monkey: failed to load Suzanne glTF", err);
     },
   );
 }
